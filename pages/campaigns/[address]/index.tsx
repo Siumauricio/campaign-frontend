@@ -4,6 +4,7 @@ import { ContributeForm } from '../../../components/Campaign/ContribuiteForm';
 import Campaign from '../../../utils/campaign';
 import web3 from '../../../utils/web3';
 import NextLink from 'next/link';
+import { useEffect } from 'react';
 interface Props {
   minimumContribution: string;
   balance: string;
@@ -104,7 +105,7 @@ const Show: NextPage<Props> = ({
                   css={{ display: 'flex', flexDirection: 'column' }}
                 >
                   <Text display size="xs" weight={'semibold'}>
-                    {web3.utils.fromWei(minimumContribution, 'ether')}
+                    {minimumContribution}
                   </Text>
                   <Text css={{ color: '$backgroundContent2' }}>
                     Minimun contribution(wei)
@@ -205,7 +206,6 @@ Show.getInitialProps = async (ctx) => {
 
   const campaign = Campaign(address as string);
   const summary = await campaign.methods.getSummary().call();
-
   return {
     minimumContribution: summary[0],
     balance: summary[1],

@@ -1,5 +1,6 @@
 import { Card, Flex, Link, Text } from 'zorotek-ui';
 import NextLink from 'next/link';
+import { useState } from 'react';
 
 interface CampaignList {
   manager: string;

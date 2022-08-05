@@ -39,6 +39,7 @@ export const ContributeForm: React.FunctionComponent<Props> = ({
         from: account[0],
       });
       setIsLoading(false);
+      setAmount('');
       router.replace('/campaigns/' + address);
     } catch (error: any) {
       setErrorTransaction(error.message);
@@ -70,7 +71,7 @@ export const ContributeForm: React.FunctionComponent<Props> = ({
                   px: '$3',
                 }}
               >
-                Wei
+                Ether
               </Flex>
             }
           />

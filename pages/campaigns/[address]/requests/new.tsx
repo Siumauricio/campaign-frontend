@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Box, Button, Flex, Text } from 'zorotek-ui';
+import { Box, Flex, Text } from 'zorotek-ui';
 import { RequestForm } from '../../../../components/Campaign/RequestForm';
 interface Props {
   address: string;

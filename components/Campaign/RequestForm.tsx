@@ -120,7 +120,7 @@ export const RequestForm: React.FunctionComponent<Props> = ({
               onChange={onChange}
               value={request.amount}
               name="amount"
-              label="Amount in ether"
+              label="Amount in Ether"
               placeholder="Amount"
               contentLeft={
                 <Flex
@@ -131,7 +131,7 @@ export const RequestForm: React.FunctionComponent<Props> = ({
                     px: '$3',
                   }}
                 >
-                  Wei
+                  Ether
                 </Flex>
               }
             />

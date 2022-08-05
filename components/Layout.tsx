@@ -26,7 +26,11 @@ const Layout: React.FunctionComponent<Props> = ({ children }) => {
             maxWidth: '70rem',
           }}
         >
-          <Flex justifyContent={'space-between'} flexWrap="wrap">
+          <Flex
+            justifyContent={'space-between'}
+            flexWrap="wrap"
+            css={{ overflow: 'hidden' }}
+          >
             <Flex>
               <Text display size="xs" weight={'bold'}>
                 <NextLink href={'/'}>

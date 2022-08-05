@@ -98,7 +98,7 @@ const New: NextPage = () => {
             minWidth: '100%',
           }}
         >
-          Contribuite
+          Create Campaign
         </Button>
       </Flex>
     </Box>
