@@ -18,13 +18,15 @@ const Home: NextPage<Props> = ({ campaigns }) => {
     <Box>
       <Flex
         columnGap={15}
+        // flexDirection={
+        // campaigns.length === 0 ? 'column-reverse' : 'row'
+
+        // }
+        alignContent={'center'}
         css={{
           width: '100%',
           height: '100%',
           pt: '$3',
-          '@xs': {
-            px: '$2',
-          },
           '@md': {
             pt: '$6',
           },

@@ -16,6 +16,11 @@
     "incremental": true,
     "typeRoots": ["./types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/campaigns/[address]"
+  ],
   "exclude": ["node_modules"]
 }

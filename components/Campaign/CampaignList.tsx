@@ -1,5 +1,5 @@
 import { Card, Flex, Link, Text } from 'zorotek-ui';
-import web3 from '../../utils/web3';
+import NextLink from 'next/link';
 
 interface CampaignList {
   manager: string;
@@ -15,12 +15,6 @@ interface Props {
 export const CampaignList: React.FunctionComponent<Props> = ({
   campaigns,
 }) => {
-  campaigns = [
-    ...campaigns,
-    ...campaigns,
-    ...campaigns,
-    ...campaigns,
-  ];
   return (
     <Flex justifyContent={'center'}>
       <Flex flexDirection="column">
@@ -45,9 +39,11 @@ export const CampaignList: React.FunctionComponent<Props> = ({
                 </Text>
               </Card.Header>
               <Card.Content>
-                <Link color={'blue'} colored icon>
-                  View Campaign
-                </Link>
+                <NextLink href={`/campaigns/${campaign}`}>
+                  <Link color={'blue'} colored icon>
+                    View Campaign
+                  </Link>
+                </NextLink>
               </Card.Content>
             </Card>
           ))}
