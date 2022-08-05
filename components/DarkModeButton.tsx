@@ -17,7 +17,7 @@ export const DarkModeButton = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
   return (
-    <Flex gap={15} alignItems="center">
+    <Flex gap={15} flexWrap="wrap">
       <Toggle
         initialChecked={theme === 'dark'}
         onChange={toggleTheme}
@@ -58,7 +58,13 @@ export const DarkModeButton = () => {
       />
       <Status
         color={theme === 'dark' ? 'blue' : 'red'}
-        cssContainer={{ marginTop: '$2' }}
+        cssContainer={{
+          marginTop: '$1',
+          display: 'none',
+          '@sm': {
+            display: 'block',
+          },
+        }}
       >
         {theme === 'dark' ? 'Dark' : 'Light'}
       </Status>
