@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text } from 'zorotek-ui';
+import { Box, Divider, Flex, Link, Text } from 'zorotek-ui';
 import { DarkModeButton } from '../components/DarkModeButton';
 import NextLink from 'next/link';
 interface Props {
@@ -20,11 +20,10 @@ const Layout: React.FunctionComponent<Props> = ({ children }) => {
         <Box
           as="nav"
           css={{
-            borderBottom: '1px solid $border',
             py: '$2',
             px: '$5',
             width: '100%',
-            maxWidth: '50rem',
+            maxWidth: '70rem',
           }}
         >
           <Flex justifyContent={'space-between'} flexWrap="wrap">
@@ -42,10 +41,10 @@ const Layout: React.FunctionComponent<Props> = ({ children }) => {
               <DarkModeButton />
             </Flex>
           </Flex>
+          <Divider />
+          {children}
         </Box>
       </Flex>
-
-      {children}
     </Box>
   );
 };
