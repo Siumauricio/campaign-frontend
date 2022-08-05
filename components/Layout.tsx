@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Text } from 'zorotek-ui';
 import { DarkModeButton } from '../components/DarkModeButton';
-
+import NextLink from 'next/link';
 interface Props {
   children: React.ReactNode;
 }
@@ -30,13 +30,15 @@ const Layout: React.FunctionComponent<Props> = ({ children }) => {
           <Flex justifyContent={'space-between'} flexWrap="wrap">
             <Flex>
               <Text display size="xs" weight={'bold'}>
-                <Link href="/">CrowdCoin</Link>
+                <NextLink href={'/'}>
+                  <Link>CrowdCoin</Link>
+                </NextLink>
               </Text>
             </Flex>
             <Flex alignItems={'center'} gap={20}>
-              <Text>
+              <NextLink href={'/'}>
                 <Link href="/">Campaigns</Link>
-              </Text>
+              </NextLink>
               <DarkModeButton />
             </Flex>
           </Flex>

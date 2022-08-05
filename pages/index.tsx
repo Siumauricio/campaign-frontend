@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Box, Button, Flex, Link } from 'zorotek-ui';
+import { useRouter } from 'next/router';
+import { Box, Button, Flex } from 'zorotek-ui';
 import { CampaignList } from '../components/Campaign/CampaignList';
-import { DarkModeButton } from '../components/DarkModeButton';
 import factory from '../utils/factory';
 
 interface Props {
@@ -9,6 +9,11 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ campaigns }) => {
+  const router = useRouter();
+
+  const handleCreateCampaign = () => {
+    router.push('/campaigns/new');
+  };
   return (
     <Box>
       <Flex
@@ -30,6 +35,7 @@ const Home: NextPage<Props> = ({ campaigns }) => {
         <CampaignList campaigns={campaigns} />
         <Box>
           <Button
+            onClick={handleCreateCampaign}
             css={{
               position: 'static',
               my: '$4',
