@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import { Box, Card, Flex, Grid, Text } from 'zorotek-ui';
-import { ContributeForm } from '../../components/Campaign/ContribuiteForm';
-import Campaign from '../../utils/campaign';
-import web3 from '../../utils/web3';
-
+import { Box, Button, Card, Flex, Grid, Text } from 'zorotek-ui';
+import { ContributeForm } from '../../../components/Campaign/ContribuiteForm';
+import Campaign from '../../../utils/campaign';
+import web3 from '../../../utils/web3';
+import NextLink from 'next/link';
 interface Props {
   minimumContribution: string;
   balance: string;
@@ -57,7 +57,7 @@ const Show: NextPage<Props> = ({
           css={{
             justifyContent: 'center',
             width: '100%',
-            overflow: 'auto',
+            overflow: 'hidden',
             '@sm': {
               justifyContent: 'flex-start',
             },
@@ -187,6 +187,12 @@ const Show: NextPage<Props> = ({
                 </Card.Content>
               </Card>
             </Grid.Item>
+            <NextLink
+              href={`/campaigns/${address}/requests`}
+              passHref
+            >
+              <Button css={{ mt: '$2' }}>View Requests</Button>
+            </NextLink>
           </Grid>
           <ContributeForm address={address} />
         </Flex>
