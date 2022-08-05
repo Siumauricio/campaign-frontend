@@ -1,24 +1,11 @@
 import type { NextPage } from 'next';
-import { Box, Flex, Text } from 'zorotek-ui';
-import Campaign from '../../../../utils/campaign';
+import { Box, Button, Flex, Text } from 'zorotek-ui';
 import { RequestForm } from '../../../../components/Campaign/RequestForm';
 interface Props {
-  minimumContribution: string;
-  balance: string;
-  NewCount: string;
-  approversCount: string;
-  manager: string;
   address: string;
 }
 
-const New: NextPage<Props> = ({
-  minimumContribution,
-  approversCount,
-  balance,
-  NewCount,
-  manager,
-  address,
-}) => {
+const New: NextPage<Props> = ({ address }) => {
   return (
     <Box>
       <Flex
@@ -56,16 +43,7 @@ const New: NextPage<Props> = ({
 };
 New.getInitialProps = async (ctx) => {
   const { address } = ctx.query;
-
-  const campaign = Campaign(address as string);
-  const summary = await campaign.methods.getSummary().call();
-
   return {
-    minimumContribution: summary[0],
-    balance: summary[1],
-    NewCount: summary[2],
-    approversCount: summary[3],
-    manager: summary[4],
     address: address as string,
   };
 };
